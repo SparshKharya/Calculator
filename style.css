@@ -1,71 +1,76 @@
-body, html {
-	background: yellow;
-	margin: 0;
-	padding: 0;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
-
-.container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: #008080;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
-	border-radius: 14px;
-	padding-bottom: 20px;
-	width: 320px;
-	
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: #000;
 }
-.display {
-	width: 100%;
-	height: 60px;
-	padding: 40px 0;
-	background: orange;
-	border-top-left-radius: 14px;
-	border-top-right-radius: 14px;
+.wrapper{
+  height: 100px;
+  width: 360px;
+  position: relative;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 10px;
+  cursor: default;
+  animation: animate 1.5s linear infinite;
 }
-.buttons {
-	padding: 20px 20px 0 20px;
+.wrapper .display,
+.wrapper span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.row {
-	width: 280px;
-	float: left;
+.wrapper .display{
+  z-index: 999;
+  height: 85px;
+  width: 345px;
+  background: #1b1b1b;
+  border-radius: 6px;
+  text-align: center;
 }
-input[type=button] {
-	width: 60px;
-	height: 60px;
-	float: left;
-	padding: 0;
-	margin: 5px;
-	box-sizing: border-box;
-	background: #ecedef;
-	border: none;
-	font-size: 30px;
-	line-height: 30px;
-	border-radius: 50%;
-	font-weight: 700;
-	color: #5E5858;
-	cursor: pointer;
-	
+.display #time{
+  line-height: 85px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 1.5s linear infinite;
 }
-input[type=text] {
-	width: 270px;
-	height: 60px;
-	float: left;
-	padding: 0;
-	box-sizing: border-box;
-	border: none;
-	background: none;
-	color: #ffffff;
-	text-align: right;
-	font-weight: 700;
-	font-size: 60px;
-	line-height: 60px;
-	margin: 0 25px;
-	
+@keyframes animate {
+  100%{
+    filter: hue-rotate(360deg);
+  }
 }
-.red {
-	background: orange !important;
-	color: white !important;
-	
+.wrapper span{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: inherit;
+}
+.wrapper span:first-child{
+  filter: blur(7px);
+}
+.wrapper span:last-child{
+  filter: blur(20px);
+}
+footer{
+  background: #111;
+  padding: 15px 23px;
+  color: #fff;
+  text-align: center;
+}
+footer span a{
+  color:yellow;
+  text-decoration: none;
+}
+footer span a:hover{
+  text-decoration: underline;
 }
